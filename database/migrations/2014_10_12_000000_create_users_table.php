@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -20,6 +22,38 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        DB::table('users')->insert([
+            [
+                'name' => 'Professor Pardal', 
+                'email' => 'admin@admin.com', 
+                'password' => Hash::make('123456')
+            ]
+        ]);
+
+        DB::table('users')->insert([
+            [
+                'name' => 'Professor Roberto', 
+                'email' => 'roberto@admin.com', 
+                'password' => Hash::make('123456')
+            ]
+        ]);
+
+        DB::table('users')->insert([
+            [
+                'name' => 'Professor Paulo', 
+                'email' => 'paulo@admin.com', 
+                'password' => Hash::make('123456')
+            ]
+        ]);
+
+        DB::table('users')->insert([
+            [
+                'name' => 'Professora Izabel', 
+                'email' => 'izabel@admin.com', 
+                'password' => Hash::make('123456')
+            ]
+        ]);
     }
 
     /**
